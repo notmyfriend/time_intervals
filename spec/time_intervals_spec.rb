@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'rspec/autorun'
-require './lib/time_intervals'
+require 'rspec'
+require_relative '../lib/time_intervals'
 
 describe '#get_intervals' do
   it 'processes reqular set of time intervals' do
