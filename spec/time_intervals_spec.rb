@@ -28,10 +28,12 @@ describe '#get_intervals' do
     intervals1 = nil
     intervals2 = [['10:00', '10:20'], [10.40, '11:00'], [1_050, '12:00']]
     intervals3 = [['10:00', '10:90'], ['10.40', '30:60'], ['24:50', '12:00']]
+    intervals4 = [['10:00', '10:20'], ['12:00', '10:50'], ['12:00', '13:00']]
 
     expect { get_intervals(intervals1) }.to raise_error(ArgumentError)
     expect { get_intervals(intervals2) }.to raise_error(ArgumentError)
     expect { get_intervals(intervals3) }.to raise_error(ArgumentError)
+    expect { get_intervals(intervals4) }.to raise_error(ArgumentError)
   end
 
   context 'when interval includes a following interval' do
